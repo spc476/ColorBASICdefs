@@ -43,9 +43,9 @@ CB.putstr	equ	$AFA4	; A,B,X,Y
 CB.CHKNUM	equ	$B143	;
 CB.CHKSTR	equ	$B146	;
 CB.eval		equ	$B156	; 	; evaluate expression
-CB.syncpar	equ	$B267	; A,B	; check for ')'
-CB.synopar	equ	$B26A	; A,B	; check for '('
-CB.syncomma	equ	$B26D	; A,B	; check for ','
+CB.evalcpar	equ	$B267	; A,B	; check for ')'
+CB.evalopar	equ	$B26A	; A,B	; check for '('
+CB.evalcomma	equ	$B26D	; A,B	; check for ','
 CB.INTCVT	equ	$B3ED	; A,B,X
 CB.uintcvt	equ	$B3FE
 CB.fcerr	equ	$B44A
