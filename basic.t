@@ -16,7 +16,8 @@
 
 	;-------------------------------------------------------------
 	; set up memory protections.  For variables, read/write, For
-	; routines, read/execute.  For vectors, read/write/execute.
+	; routines, read/execute.  For vectors, read/write/execute.  For a
+	; few routines, jump to user code.
 	;-------------------------------------------------------------
 
 	.opt	test	prot rw,VALTYP
@@ -29,11 +30,10 @@
 	.opt	test	prot rwx,POLCAT , WRTLDR + 1
 	.opt	test	prot rwx,DSKCON , DOSVEC + 1
 
-	.opt	test	prot rx,INTCVT
+	.opt	test	prot rx,INTCVT  , INTCVT  + 2
 	.opt	test	prot rx,GIVBF
 	.opt	test	prot rx,GIVABF
 	.opt	test	prot rx,CHKNUM
 	.opt	test	prot rx,STRCVT
-	.opt	test	prot rx,GIVSTR
-	.opt	test	prot rx,RSVPSTR
-	.opt	test	prot rwx,RSVPSTR + 1 , RSVPSTR + 2
+	.opt	test	prot rx,GIVSTR  , GIVSTR  + 2
+	.opt	test	prot rx,RSVPSTR , RSVPSTR + 2
