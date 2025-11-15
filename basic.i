@@ -216,10 +216,9 @@ POTVAL3		equ	$15D	; JOYIN left, up/down
 ;
 ;Note:	don't need to call if using INTCVT
 ; ---------------------------------------------------------------
-;	STRCVT		Convert FP0 to string
+;	CHKSTR		Convert FP0 to string
 ;Entry:	none
-;Exit:	B - legth
-;	X - ptr to actual string
+;Exit:	none, only returns when FP0 is of type string
 ;
 ;Note:	does not return if FP0 is a number
 ; ---------------------------------------------------------------
@@ -242,6 +241,6 @@ POTVAL3		equ	$15D	; JOYIN left, up/down
 ;****************************************************************************
 
 CHKNUM		equ	$B143	; ensure parameter is a number
-STRCVT		equ	$B146	; convert CB.fp0 to B (length) X (ptr)
+CHKSTR		equ	$B146	; ensure parameter is a string
 GIVSTR		equ	$B54C	; return string in STRDES
 RSVPSTR		equ	$B50F	; reserve string space

@@ -41,6 +41,7 @@ CB.chkstk	equ	$AC33	; B (# 16 bit values)
 CB.error	equ	$AC46	; B (ERR# * 2)
 CB.putstr	equ	$AFA4	; A,B,X,Y
 CB.CHKNUM	equ	$B143	;
+CB.evalnum	equ	$B141
 CB.CHKSTR	equ	$B146	;
 CB.eval		equ	$B156	; 	; evaluate expression
 CB.evalcpar	equ	$B267	; A,B	; check for ')'
@@ -53,9 +54,9 @@ CB.GIVBF	equ	$B4F3	; A,B,X
 CB.GIVABF	equ	$B4F4	; A,B,X
 CB.STR		equ	$B4FD	; A,B,X,U
 CB.GIVSTR	equ	$B54C	; A,B,X
-CB.RSVPSTR	equ	$B56D	; A,B,X
+CB.RSVPSTR	equ	$B50F	; A,B,X
 CB.evalexpb	equ	$B70B	; A,B,X	; return expr in B, err > 255
-CB.addrcvt	equ	$B750	; X
+CB.addrcvt	equ	$B740	; X
 CB.strinout	equ	$B99C	; A,B,X,U
 CB.decout	equ	$BDCC	; A,B,X,U
 

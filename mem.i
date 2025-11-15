@@ -1,12 +1,13 @@
 ; LGPL3+ Copyright 2025 by Sean Conner.
 ; Memory map (addresses $0100 on up) of CB/ECB/DECB.
 
-CIVT.num	equ	0
-CIVT.keyword	equ	1
-CIVT.keyjmp	equ	3
-CIVT.fnum	equ	5
-CIVT.funword	equ	6
-CIVT.funjmp	equ	8
+_CIT.num	equ	0
+_CIT.keyword	equ	1
+_CIT.keyjmp	equ	3
+_CIT.fnum	equ	5
+_CIT.funword	equ	6
+_CIT.funjmp	equ	8
+_CIT._size	equ	10
 
 	;***********************************************
 	; COLOR BASIC 
@@ -24,7 +25,7 @@ CB.casflg	equ	$011A	; upper/lower case flag $FF=upper, $00=lower
 CB.debval	equ	$011B	; keyboard debounce delay ($045E)
 CB.expjmp	equ	$011D	; jump address for expoentiation
 CB.comvec	equ	$0120	; command interpretation vector tables
-CB.civt		equ	$0120	; CB vector table
+CB.cit		equ	$0120	; CB vector table
 CB.keybuf	equ	$0152	; keyboard memory buffer
 CB.POTVAL0	equ	$015A	; right horizontal joystick
 CB.POTVAL1	equ	$015B	; right vertical joystick
@@ -75,7 +76,7 @@ CB.vidram	equ	$0400	; video display area
 
 ECB.timval	equ	$0112	; timver value for ECB
 ECB.unused0114	equ	$0114
-ECB.civt	equ	$012A	; ECB vector table
+ECB.cit		equ	$012A	; ECB vector table
 ECB.usr0	equ	$013E	; USR0 address
 ECB.usr1	equ	$0140	; USR1 "
 ECB.usr2	equ	$0142	; USR2 "
@@ -91,9 +92,9 @@ ECB.usr9	equ	$0150	; USR9 "
 	; DISK [EXTENDED] COLOR BASIC
 	;***********************************************
 
-USR.civt	equ	$013E	; user command vector interpretation table
+USR.cit		equ	$013E	; user command vector interpretation table
 
-DECB.civt	equ	$0134	; DECB vector table
+DECB.cit	equ	$0134	; DECB vector table
 DECB.dbuf0	equ	$0600	; I/O buffer #0
 DECB.dbuf1	equ	$0700	; I/O buffer #1
 DECB.fatbl0	equ	$0800	; FAT drive 0
