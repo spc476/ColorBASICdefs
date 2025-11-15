@@ -39,14 +39,18 @@ CB.setmux	equ	$A9A2	; A,U
 CB.GETJOY	equ	$A9DE	; A,B,X,U
 CB.chkstk	equ	$AC33	; B (# 16 bit values)
 CB.error	equ	$AC46	; B (ERR# * 2)
+CB.runtoken	equ	$ADD4	; A,X	; run tokens via jmp table
 CB.putstr	equ	$AFA4	; A,B,X,Y
 CB.CHKNUM	equ	$B143	;
 CB.evalnum	equ	$B141
 CB.CHKSTR	equ	$B146	;
 CB.eval		equ	$B156	; 	; evaluate expression
+CB.pevalp	equ	$B262	; A,B	; parse '(' <expr> ')'
 CB.evalcpar	equ	$B267	; A,B	; check for ')'
 CB.evalopar	equ	$B26A	; A,B	; check for '('
 CB.evalcomma	equ	$B26D	; A,B	; check for ','
+CB.evalchar	equ	$B26F	; A,B	; check for character in B
+CB.syntaxerr	equ	$B277	;	; signal syntax error
 CB.INTCVT	equ	$B3ED	; A,B,X
 CB.uintcvt	equ	$B3FE
 CB.fcerr	equ	$B44A
@@ -58,6 +62,7 @@ CB.RSVPSTR	equ	$B50F	; A,B,X
 CB.evalexpb	equ	$B70B	; A,B,X	; return expr in B, err > 255
 CB.addrcvt	equ	$B740	; X
 CB.strinout	equ	$B99C	; A,B,X,U
+CB.putdescr	equ	$B99F	; A,B,X,U
 CB.decout	equ	$BDCC	; A,B,X,U
 
 	;***********************************************
@@ -66,3 +71,4 @@ CB.decout	equ	$BDCC	; A,B,X,U
 
 ECB.evalrect	equ	$938F	;	(x1,y1)-(x2,y2)
 ECB.evalpoint	equ	$93B2	;	(x,y)
+ECB.memcpy16	equ	$9736	; X,Y,U	; X=src U=dest Y=#words
