@@ -15,9 +15,9 @@ _CIT._size	equ	10
 				; CB    ECB   DECB
 CB.sw3vec	equ	$0101	; $---- $---- $3B3B SWI3 vector
 CB.sw2vec	equ	$0104	; $---- $---- $3B3B SWI2 vector
-CB.swivec	equ	$0107	; $---- $---- $---- SWI vector
-CB.nmivec	equ	$010A	; $---- $---- $D7AE NMI vector
-CB.irqvec	equ	$010D	; $A9B3 $894C $D7BC IRQ vector
+CB.swivec	equ	$0107	; $---- $---- $---- SWI  vector
+CB.nmivec	equ	$010A	; $---- $---- $D7AE NMI  vector
+CB.irqvec	equ	$010D	; $A9B3 $894C $D7BC IRQ  vector
 CB.frqvec	equ	$0110	; $A0F6 $A0F6 $A0F6 FIRQ vector
 CB.usrjmp	equ	$0112	; jump address for CB USR function
 CB.rvseed	equ	$0115	; FP random number seed ($804FC75259)
@@ -41,14 +41,14 @@ CB.v_valid	equ	$0161	; device number validity check
 CB.v_prnparam	equ	$0164	; set print parameters
 CB.v_conout	equ	$0167	; console out
 CB.v_conin	equ	$016A	; console in
-CB.v_indevcheck	equ	$016D	; input device number check
-CB.v_outdevcheck equ	$0170	; output device number check
+CB.v_idevcheck	equ	$016D	; input device number check
+CB.v_odevcheck	equ	$0170	; output device number check
 CB.v_closeall	equ	$0173	; close all files
 CB.v_close	equ	$0176	; CLOSE
 CB.v_print	equ	$0179	; PRINT
 CB.v_input	equ	$017C	; INPUT
 CB.v_break	equ	$017F	; Break check
-CB.v_inputbasic	equ	$0182	; inputting a BASIC line
+CB.v_inputbasic	equ	$0182	; inputing a BASIC line
 CB.v_termbasic	equ	$0185	; terminating basic line input
 CB.v_eof	equ	$0188	; EOF
 CB.v_eval	equ	$018B	; evaluate expression
@@ -75,7 +75,7 @@ CB.vidram	equ	$0400	; video display area
 	;***********************************************
 
 ECB.timval	equ	$0112	; timver value for ECB
-ECB.unused0114	equ	$0114
+ECB.U0114	equ	$0114
 ECB.cit		equ	$012A	; ECB vector table
 ECB.usr0	equ	$013E	; USR0 address
 ECB.usr1	equ	$0140	; USR1 "
