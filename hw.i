@@ -233,6 +233,8 @@ SAM.F3		equ	$FFCC	; frame buffer address bit 12
 SAM.F4		equ	$FFCE	; frame buffer address bit 13
 SAM.F5		equ	$FFD0	; frame buffer address bit 14
 SAM.F6		equ	$FFD2	; frame buffer address bit 15
+SAM.SLOW	equ	$FFD6
+SAM.FAST	equ	$FFD7
 SAM.ROM		equ	$FFDE
 SAM.RAM		equ	$FFDF
 
@@ -271,7 +273,7 @@ G3R.V		equ	5
 G6C.V		equ	6
 G6R.V		equ	6
 
-TEXT		equ	A.V   :: A.PIA
+TXT		equ	A.V   :: A.PIA
 G1C		equ	G1C.V :: G1C.PIA
 G1R		equ	G1R.V :: G1R.PIA
 G2C		equ	G2C.V :: G2C.PIA
