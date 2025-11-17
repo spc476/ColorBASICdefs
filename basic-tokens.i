@@ -191,10 +191,12 @@ DECB.FN_MKN$	equ	$A6
 DECB.FN_AS	equ	$A7
 DECB.FN_max	equ	$A7
 
-SECB.FM_min	equ	$A8
-SECB.FN_LPEEK	equ	$A8
-SECB.FN_BUTTON	equ	$A9
-SECB.FN_HPOINT	equ	$AA
-SECB.FN_ERNO	equ	$AB
-SECB.FN_ERLIN	equ	$AC
-SECB.FN_max	equ	$AC
+	; $A8 not issued---mistake?
+
+SECB.FM_min	equ	$A9
+SECB.FN_LPEEK	equ	$AA
+SECB.FN_BUTTON	equ	$AB
+SECB.FN_HPOINT	equ	$AC
+SECB.FN_ERNO	equ	$AD
+SECB.FN_ERLIN	equ	$AE
+SECB.FN_max	equ	$AE
