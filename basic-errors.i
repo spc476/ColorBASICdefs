@@ -28,3 +28,21 @@ CB.ERR_FM	equ	21 * 2	; bad file mode
 CB.ERR_NO	equ	22 * 2	; file not open
 CB.ERR_IE	equ	23 * 2	; input past end of file
 CB.ERR_DS	equ	24 * 2	; direct statement in file
+
+ECB.ERR_UF	equ	25 * 2	; undefined function (FN) call
+ECB.ERR_NE	equ	26 * 2	; file not found
+
+DECB.ERR_BR	equ	27 * 2	; bad record
+DECB.ERR_DF	equ	28 * 2	; disk full
+DECB.ERR_OB	equ	29 * 2	; out of buffer space
+DECB.ERR_WP	equ	30 * 2	; write protected
+DECB.ERR_FN	equ	31 * 2	; bad file name
+DECB.ERR_FS	equ	32 * 2	; bad file structure
+DECB.ERR_AE	equ	33 * 2	; file already exists
+DECB.ERR_FO	equ	34 * 2	; field overflow
+DECB.ERR_SE	equ	35 * 2	; set to non-fielded string
+DECB.ERR_VF	equ	36 * 2	; verification error
+DECB.ERR_ER	equ	37 * 2	; write or input past end of record
+
+SECB.ERR_HR	equ	38 * 2	; hires graphics error
+SECB.ERR_HP	equ	39 * 2	; hires text error
