@@ -58,7 +58,7 @@ CB.evalcpar	equ	$B267	; A,B	; check for ')'
 CB.evalopar	equ	$B26A	; A,B	; check for '('
 CB.evalcomma	equ	$B26D	; A,B	; check for ','
 CB.evalchar	equ	$B26F	; A,B	; check for character in B
-CB.syntaxerr	equ	$B277	;	; SN error signal syntax error
+CB.snerr	equ	$B277	;	; SN error signal syntax error
 CB.getvar	equ	$B357	; X	; return variable
 CB.INTCVT	equ	$B3ED	; A,B,X
 CB.uintcvt	equ	$B3FE
@@ -68,7 +68,7 @@ CB.GIVABF	equ	$B4F4	; A,B,X
 CB.STR		equ	$B4FD	; A,B,X,U
 CB.GIVSTR	equ	$B54C	; A,B,X
 CB.RSVPSTR	equ	$B50F	; A,B,X
-CB.cberr	equ	$B555	;	; ST error string formula too long
+CB.sterr	equ	$B555	;	; ST error string formula too long
 CB.lserr	equ	$B625	;	; LS error string too long
 CB.evalexpb	equ	$B70B	; A,B,X	; return expr in B, err > 255
 CB.addrcvt	equ	$B740	; X
@@ -90,6 +90,17 @@ ECB.evalrect	equ	$938F	;	; (x1,y1)-(x2,y2)
 ECB.evalpoint	equ	$93B2	;	; (x,y)
 ECB.memcpy16	equ	$9736	; X,Y,U	; X=src U=dest Y=#words
 
+ECB.v_conout	equ	$8273	;  3 console out
+ECB.v_conin	equ	$8CF1	;  4 console in
+ECB.v_close	equ	$8286	;  8 CLOSE
+ECB.v_print	equ	$8E90	;  9 PRINT
+ECB.v_eval	equ	$8846	; 15 evaluate expression
+ECB.v_error	equ	$88F0	; 17 error driver
+ECB.v_run	equ	$829C	; 18 RUN
+ECB.v_strtof	equ	$87E5	; 19 ASCII to FP
+ECB.v_intloop	equ	$82B9	; 20 BASIC command interpreter loop
+ECB.v_crunch	equ	$8304	; 23 crunch BASIC line
+
 	;***********************************************
 	; Disk Extended Color BASIC 1.1
 	;***********************************************
@@ -102,3 +113,24 @@ DECB.fnerr	equ	$C978	;	; FN error bad file name
 DECB.ererr	equ	$CDCB	;	; ER error read/write past EOR
 DECB.foerr	equ	$D0DA	;	; FO error field overflow
 DECB.seerr	equ	$D119	;	; SE error set to non-fielded string
+
+DECB.v_open	equ	$C44B	;  0 OPEN command
+DECB.v_valid	equ	$C888	;  1 device number validity check
+DECB.v_prnparam	equ	$C893	;  2 set print parameters
+DECB.v_conout	equ	$CC1C	;  3 console out
+DECB.v_conin	equ	$C5BC	;  4 console in
+DECB.v_idevchk	equ	$C848	;  5 input device number check
+DECB.v_odevchk	equ	$C84B	;  6 output device number check
+DECB.v_closeall	equ	$CAE9	;  7 close all files
+DECB.v_close	equ	$CAF9	;  8 CLOSE
+DECB.v_input	equ	$CD35	; 10 INPUT
+DECB.v_break	equ	$C8A9	; 11 Break check
+DECB.v_inbasic	equ	$C6E4	; 12 inputing a BASIC line
+DECB.v_termbasic equ	$CAE4	; 13 terminating basic line input
+DECB.v_eof	equ	$C90C	; 14 EOF
+DECB.v_eval	equ	$CED2	; 15 evaluate expression
+DECB.v_onerrgoto equ	$C6E4	; 16 RSVP for ON ERROR GOTO
+DECB.v_error	equ	$C265	; 17 error driver
+DECB.v_run	equ	$CA3E	; 18 RUN
+DECB.v_intloop	equ	$C880	; 20 BASIC command interpreter loop
+DECB.v_cls	equ	$C2B2	; 22 CLS

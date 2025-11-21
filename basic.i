@@ -231,9 +231,10 @@ POTVAL3		equ	$15D	; JOYIN left, up/down
 ; ---------------------------------------------------------------
 ;	RSVPSTR		Reserve space for a string
 ;Entry:	B - length required
-;Exit:	X - space for string (should be stored in STRDES + _STRPTR)
+;Exit:	X - pointer for string (should be stored in STRDES + _STRPTR)
 ;	B - length (should be stored in STRDES + _STRLEN)
-;	STRDES - set with X and B
+;	STRDES + _STRLEN - length
+;	STRDES + _STRPTR - pointer
 ;	Zf - 0 if B > 0, 1 if B == 0
 ;
 ;Note:	The _STRPTR value in the passed in string descriptor may change
