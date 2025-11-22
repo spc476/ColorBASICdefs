@@ -105,7 +105,7 @@ CB.cpertm	equ	$83	; *TV bit counter
 CB.cbtpha	equ	$84	; *TV bit phase flag
 CB.clstsn	equ	$85	; *TV last sine table entry
 CB.grblok	equ	$86	; *TV graphic block value for SET, RESET and POINT
-CB.ikeyim	equ	$87	; *TV INKEY$ RAM image
+CB.ikeyin	equ	$87	; *TV INKEY$ RAM image
 CB.curpos	equ	$88	; *PV cursor location
 CB.zero		equ	$8A	; *PV dummy - these two bytes are alwas zero
 CB.sndton	equ	$8C	; *TV tone value for SOUND command

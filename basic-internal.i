@@ -25,7 +25,7 @@ CB.noerr	equ	$A3FB	;	; NO error file not open
 CB.devoutchk	equ	$A406	; A
 CB.close	equ	$A42D	; A
 CB.breakp	equ	$A549	; A
-CB.ch2str	equ	$A56B
+CB.inkeyret	equ	$A56B
 CB.fmerr	equ	$A616	;	; FM error bad file mode
 CB.ioerr	equ	$A61F	;	; IO error
 CB.aoerr	equ	$A61C	;	; AO error already open
@@ -72,8 +72,8 @@ CB.sterr	equ	$B555	;	; ST error string formula too long
 CB.lserr	equ	$B625	;	; LS error string too long
 CB.evalexpb	equ	$B70B	; A,B,X	; return expr in B, err > 255
 CB.addrcvt	equ	$B740	; X
-CB.strinout	equ	$B99C	; A,B,X,U
-CB.putdescr	equ	$B99F	; A,B,X,U
+CB.strout	equ	$B99C	; A,B,X,U
+CB.descrout	equ	$B99F	; A,B,X,U
 CB.overr	equ	$BA92	;	; OV error overflow error
 CB.d0err	equ	$BC06	;	; /0 error
 CB.unknwn	equ	$BDD9
