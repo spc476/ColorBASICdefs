@@ -272,13 +272,3 @@ G3C.V		equ	4
 G3R.V		equ	5
 G6C.V		equ	6
 G6R.V		equ	6
-
-TXT		equ	A.V   :: A.PIA
-G1C		equ	G1C.V :: G1C.PIA
-G1R		equ	G1R.V :: G1R.PIA
-G2C		equ	G2C.V :: G2C.PIA
-G2R		equ	G2R.V :: G2R.PIA
-G3C		equ	G3C.V :: G3C.PIA
-G3R		equ	G3R.V :: G3R.PIA
-G6C		equ	G6C.V :: G6C.PIA
-G6R		equ	G6R.V :: G6R.PIA
