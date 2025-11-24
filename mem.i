@@ -8,6 +8,11 @@ _CIT.fnum	equ	5	; # functions
 _CIT.fword	equ	6	; function word array
 _CIT.fjmp	equ	8	; function jump table
 _CIT._size	equ	10
+	; or maybe
+_CIT.items	equ	0
+_CIT.text	equ	1
+_CIT.handler	equ	3
+_CIT._rsize	equ	5
 
 	;***********************************************
 	; COLOR BASIC 
