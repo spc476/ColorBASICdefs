@@ -4,7 +4,7 @@
 ;	Color Computer 1&2 hardware registers
 ;************************************************************************
 ; PIA0
-; Port A:	NORMALLY INPUT
+; Port A:	INPUT
 ;	bit 7 - joystick comparison input
 ;	bit 6 - keyboard row 7
 ;	bit 5 - keyboard row 6
@@ -14,7 +14,7 @@
 ;	bit 1 - keyboard row 2 and left joystick switch 1
 ;	bit 0 - keyboard row 1 and right joystik switch 1
 ; Control A:
-;	bit 7 - horizontal sync interrupt flag (IRQ)
+;	bit 7 - horizontal sync interrupt flag (IRQ) (63.5 micro seconds)
 ;	bit 6 - N/U
 ;	bit 5 - always 1
 ;	bit 4 - always 1
@@ -22,7 +22,7 @@
 ;	bit 2 - 0 - port A direction, 1 - normal operation
 ;	bit 1 - 0 - IRQ on falling edge, 1 - rising edge
 ;	bit 0 - 0 - HSYNC disabled 1 - enabled
-; Port B:	NORMALLY OUTPUT  ; row   7  6  5  4 3 2 1
+; Port B:	OUTPUT           ; row   7  6  5  4 3 2 1
 ;	bit 7 - keyboard column 8	sh /? 7' sp W O G
 ;	bit 6 - keyboard column 7	   .> 6& -> V N F
 ;	bit 5 - keyboard column 6	   -= 5% <- U M E
@@ -32,7 +32,7 @@
 ;	bit 1 - keyboard column 2	cl 9) 1! Y  Q I A
 ;	bit 0 - keyboard column 1	en 8( 0  X  P H @
 ; Control B:
-;	bit 7 - vertical sync interrupt flag (IRQ)
+;	bit 7 - vertical sync interrupt flag (IRQ) (1/60 sec)
 ;	bit 6 - N/U
 ;	bit 5 - always 1
 ;	bit 4 - always 1
@@ -81,12 +81,12 @@ PIA0BC		equ	$FF03
 ;	bit 2 - 0 port A direction , 1 - normal operation
 ;	bit 1 - 0 - IRQ on falling edge, 1 - rising edge
 ;	bit 0 - 0 - CD disabled , 1 - enabled
-; Port B:	NORMALLY OUTPUT
+; Port B:	Mixed I/O
 ;	bit 7 - VDG control output A*/G
 ;	bit 6 - VDG control output GM2
 ;	bit 5 - VDG control output GM1 & INVERT
 ;	bit 4 - VDG control output GM0 & upper/lower case*
-;	bit 3 - RGB monitor sensing input CSS
+;	bit 3 - RGB monitor sensing output CSS
 ;	bit 2 - RAM size input
 ;	bit 1 - single bit sound output
 ;	bit 0 - RS-232 data input
