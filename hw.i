@@ -233,6 +233,13 @@ SAM.F3		equ	$FFCC	; frame buffer address bit 12
 SAM.F4		equ	$FFCE	; frame buffer address bit 13
 SAM.F5		equ	$FFD0	; frame buffer address bit 14
 SAM.F6		equ	$FFD2	; frame buffer address bit 15
+SAM.P1		equ	$FFD4	; page bit
+SAM.R0		equ	$FFD6	; rate bit 0
+SAM.R1		equ	$FFD8	; rate bit 1
+SAM.M0		equ	$FFDA	; memory size bit 0 ; 00 - 4k  01 - 16k
+SAM.M1		equ	$FFDC	; memory size bit 1 ; 10 - 64k 11 - 64k static
+SAM.TY		equ	$FFDE	; type ; 0 - RAM/ROM 1 - RAM/RAM
+
 SAM.SLOW	equ	$FFD6
 SAM.FAST	equ	$FFD7
 SAM.ROM		equ	$FFDE
