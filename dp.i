@@ -85,7 +85,7 @@ CB.devlcf	equ	$6B	; *TV tab zone
 CB.devpos	equ	$6C	; *TV print position
 CB.devwid	equ	$6D	; *TV width
 CB.prtdev	equ	$6E	; *TV print device: 0=not cassette, -1=cassette
-CB.DEVNUM	equ	$6F	; *PV device number: 0=DLOAD, -2=PRINTER , -1=CASSETTE, 0=SCREEN, 1-15=DISK
+CB.DEVNUM	equ	$6F	; *PV device number: -3=DLOAD, -2=PRINTER , -1=CASSETTE, 0=SCREEN, 1-15=DISK
 CB.cinbfl	equ	$70	; *PV console in buffer flag: 00=not empty, $FF=empty
 CB.rstflg	equ	$71	; *PV warm start flag: $55=warm, other=cold
 CB.rstvec	equ	$72	; *PV warm start vector - jump address for warm start
