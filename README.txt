@@ -32,11 +32,11 @@ to help with testing code for the respective '.i' file from within a09.
 
 		Definitions of the MC6839 IEEE-754 ROM.
 
-	basic-fp.i
+	fp.i
 
 		Locations of floating point routines in BASIC.
 
-	basic-internal.i
+	internals.i
 
 		Useful internal routines in BASIC.
 
