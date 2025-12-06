@@ -29,7 +29,16 @@ CB.rvseed	equ	$0115	; FP random number seed ($804FC75259)
 CB.casflg	equ	$011A	; upper/lower case flag $FF=upper, $00=lower
 CB.debval	equ	$011B	; keyboard debounce delay ($045E)
 CB.expjmp	equ	$011D	; jump address for expoentiation
-CB.comvec	equ	$0120	; command interpretation vector tables (5 entries)
+CB.comvec	equ	$0120	; CB command interpretation vector table
+CB.fnvec	equ	$0125	; CB function interpretation vector table
+ECB.comvec	equ	$012A	; ECB command interpretation vector table
+ECB.fnvec	equ	$012F	; ECB function interpretation vector table
+DECB.comvec	equ	$0134	; DECB command interpretation vector table
+DECB.fnvec	equ	$0139	; DECB function interpretation vector table
+USR.comvec	equ	$013E	; USR command interpretation vector table
+USR.fnvec	equ	$0143	; USR function interpretation vector table
+U.comvec	equ	$0148	; not used (_CIT.items = 0)
+U.fnvec		equ	$014D	; not used (_CIT.items = 0)
 CB.keybuf	equ	$0152	; keyboard memory buffer
 CB.POTVAL0	equ	$015A	; right horizontal joystick
 CB.POTVAL1	equ	$015B	; right vertical joystick
@@ -80,8 +89,6 @@ CB.vidram	equ	$0400	; video display area
 
 ECB.timval	equ	$0112	; timver value for ECB
 ECB.U0114	equ	$0114
-ECB.comvec	equ	$012A	; ECB vector table
-
 ECB.usr0	equ	$013E	; USR0 address
 ECB.usr1	equ	$0140	; USR1 "
 ECB.usr2	equ	$0142	; USR2 "
@@ -96,9 +103,6 @@ ECB.usr9	equ	$0150	; USR9 "
 	;***********************************************
 	; DISK [EXTENDED] COLOR BASIC
 	;***********************************************
-
-DECB.comvec	equ	$0134	; DECB vector table
-USR.comvec	equ	$013E	; user command vector interpretation table
 
 DECB.dbuf0	equ	$0600	; I/O buffer #0
 DECB.dbuf1	equ	$0700	; I/O buffer #1
