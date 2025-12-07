@@ -84,9 +84,9 @@ PIA0BC		equ	$FF03
 ; Port B:	Mixed I/O
 ;	bit 7 - VDG control output A*/G
 ;	bit 6 - VDG control output GM2
-;	bit 5 - VDG control output GM1 & INVERT
-;	bit 4 - VDG control output GM0 & upper/lower case*
-;	bit 3 - RGB monitor sensing output CSS
+;	bit 5 - VDG control output GM1
+;	bit 4 - VDG control output GM0 & *INT/EXT
+;	bit 3 - VDG control output CSS
 ;	bit 2 - RAM size input
 ;	bit 1 - single bit sound output
 ;	bit 0 - RS-232 data input
