@@ -8,6 +8,9 @@ the 6809.  Written for use by a09:
 but can be adapted for other assemblers.  The files that end with '.t' are
 to help with testing code for the respective '.i' file from within a09.
 
+NOTE:	Things change quite often at this point in time.  You have been
+	warned.
+
 	basic.i
 
 		Defined and useful routines to interface with BASIC.
@@ -39,4 +42,3 @@ to help with testing code for the respective '.i' file from within a09.
 	internals.i
 
 		Useful internal routines in BASIC.
-

@@ -10,7 +10,7 @@
 	.opt	test	poke GIVBF  ,$4F ; CLRA
 	.opt	test	poke GIVABF ,$39 ; RTS
 	.opt	test	poke CHKNUM ,$39 ; RTS
-	.opt	test	poke STRCVT ,$39 ; RTS
+	.opt	test	poke CHKSTR ,$39 ; RTS
 	.opt	test	poke GIVSTR ,$39 ; RTS
 	.opt	test	poke RSVPSTR,$7E ; JMP
 
@@ -34,6 +34,6 @@
 	.opt	test	prot rx,GIVBF
 	.opt	test	prot rx,GIVABF
 	.opt	test	prot rx,CHKNUM
-	.opt	test	prot rx,STRCVT
+	.opt	test	prot rx,CHKSTR
 	.opt	test	prot rx,GIVSTR  , GIVSTR  + 2
 	.opt	test	prot rx,RSVPSTR , RSVPSTR + 2
