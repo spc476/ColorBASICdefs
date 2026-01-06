@@ -1,6 +1,8 @@
 ; LGPL3+ Copyright 2025 by Sean Conner.
 ; Definitions for MC6809 vectors
 
+MC6809.VECTORS	equ	$FFF0
+
 MC6809.RSVP	equ	$FFF0
 MC6809.SWI3	equ	$FFF2
 MC6909.SWI2	equ	$FFF4
