@@ -19,9 +19,9 @@
 ;	bit 5 - always 1
 ;	bit 4 - always 1
 ;	bit 3 - SEL1 LSB of two analog MUX select lines
-;	bit 2 - 0 - port A direction, 1 - normal operation
+;	bit 2 - 0 - port A direction,    1 - normal operation
 ;	bit 1 - 0 - IRQ on falling edge, 1 - rising edge
-;	bit 0 - 0 - HSYNC disabled 1 - enabled
+;	bit 0 - 0 - HSYNC disabled,      1 - enabled
 ; Port B:	OUTPUT           ; row   7  6  5  4 3 2 1
 ;	bit 7 - keyboard column 8	sh /? 7' sp W O G
 ;	bit 6 - keyboard column 7	   .> 6& -> V N F
@@ -37,9 +37,9 @@
 ;	bit 5 - always 1
 ;	bit 4 - always 1
 ;	bit 3 - SEL2 MSB of two analog MUX select lines
-;	bit 2 - 0 - port B direction, 1 - normal operation
+;	bit 2 - 0 - port B direction,    1 - normal operation
 ;	bit 1 - 0 - IRQ on falling edge, 1 - rising edge
-;	bit 0 - VSYNC disabled 1 - enabled
+;	bit 0 - 0 - VSYNC disabled,      1 - enabled
 ;
 ; NOTE:	to scan keyboard, column select = 0 , row read = 0
 ;	MUX select lines SEL2 SEL1
@@ -54,6 +54,13 @@
 ;			 0    1		left, left/right
 ;			 1    0		right, up/down
 ;			 1    1		right, left/right
+;
+;	double check it isn't
+;			0	0	right left/right
+;			0	1	right up/down
+;			1	0	left  right/left
+;			1	1	left  up/down
+;
 ;************************************************************************
 
 PIA0A		equ	$FF00
