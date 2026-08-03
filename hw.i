@@ -4,15 +4,15 @@
 ;	Color Computer 1&2 hardware registers
 ;************************************************************************
 ; PIA0
-; Port A:	INPUT
-;	bit 7 - joystick comparison input
-;	bit 6 - keyboard row 7
-;	bit 5 - keyboard row 6
-;	bit 4 - keyboard row 5
-;	bit 3 - keyboard row 4 and left joystick switch 2
-;	bit 2 - keyboard row 3 and right joystick switch 2
-;	bit 1 - keyboard row 2 and left joystick switch 1
-;	bit 0 - keyboard row 1 and right joystik switch 1
+; Port A:
+;	bit 7 - input joystick comparison input
+;	bit 6 - input keyboard row 7
+;	bit 5 - input keyboard row 6
+;	bit 4 - input keyboard row 5
+;	bit 3 - input keyboard row 4 and left joystick switch 2
+;	bit 2 - input keyboard row 3 and right joystick switch 2
+;	bit 1 - input keyboard row 2 and left joystick switch 1
+;	bit 0 - input keyboard row 1 and right joystik switch 1
 ; Control A:
 ;	bit 7 - horizontal sync interrupt flag (IRQ) (63.5 micro seconds)
 ;	bit 6 - N/U
@@ -22,15 +22,15 @@
 ;	bit 2 - 0 - port A direction,    1 - normal operation
 ;	bit 1 - 0 - IRQ on falling edge, 1 - rising edge
 ;	bit 0 - 0 - HSYNC disabled,      1 - enabled
-; Port B:	OUTPUT           ; row   7  6  5  4 3 2 1
-;	bit 7 - keyboard column 8	sh /? 7' sp W O G
-;	bit 6 - keyboard column 7	   .> 6& -> V N F
-;	bit 5 - keyboard column 6	   -= 5% <- U M E
-;	bit 4 - keyboard column 5	   .< 4$ dn T L D
-;	bit 3 - keyboard column 4	   ;+ 3# up S K C
-;	bit 2 - keyboard column 3	br :* 2" Z  R J B
-;	bit 1 - keyboard column 2	cl 9) 1! Y  Q I A
-;	bit 0 - keyboard column 1	en 8( 0  X  P H @
+; Port B:				 ; row   7  6  5  4 3 2 1
+;	bit 7 - output keyboard column 8	sh /? 7' sp W O G
+;	bit 6 - output keyboard column 7	   .> 6& -> V N F
+;	bit 5 - output keyboard column 6	   -= 5% <- U M E
+;	bit 4 - output keyboard column 5	   .< 4$ dn T L D
+;	bit 3 - output keyboard column 4	   ;+ 3# up S K C
+;	bit 2 - output keyboard column 3	br :* 2" Z  R J B
+;	bit 1 - output keyboard column 2	cl 9) 1! Y  Q I A
+;	bit 0 - output keyboard column 1	en 8( 0  X  P H @
 ; Control B:
 ;	bit 7 - vertical sync interrupt flag (IRQ) (1/60 sec)
 ;	bit 6 - N/U
@@ -42,18 +42,18 @@
 ;	bit 0 - 0 - VSYNC disabled,      1 - enabled
 ;
 ; NOTE:	to scan keyboard, column select = 0 , row read = 0
-;	MUX select lines SEL2 SEL1
-;			 0    0		6-bit DAC
-;			 0    1		cassette
-;			 1    0		cartridge
-;			 1    1		N/U
+;	MUX select lines SEL2	SEL1
+;			 0	0	6-bit DAC
+;			 0	1	cassette
+;			 1	0	cartridge
+;			 1	1	N/U
 ;
 ;	They are also used to select the joysticks if sound
 ;	is disabled (PIA1B)
-;			 0    0		left, up/down
-;			 0    1		left, left/right
-;			 1    0		right, up/down
-;			 1    1		right, left/right
+;			 0	0	left, up/down
+;			 0	1	left, left/right
+;			 1	0	right, up/down
+;			 1	1	right, left/right
 ;
 ;	double check it isn't
 ;			0	0	right left/right
@@ -70,42 +70,42 @@ PIA0BC		equ	$FF03
 
 ;************************************************************************
 ; PIA1
-; Port A:	Mixed I/O
-;	bit 7 - 6-bit DAC MSB
-;	bit 6 - 	"
-;	bit 5 - 	"
-;	bit 4 - 	"
-;	bit 3 - 	"
-;	bit 2 - 6-bit DAC LSB
-;	bit 1 - RS-232C data output
-;	bit 0 - cassette data input
+; Port A:
+;	bit 7 - output 6-bit DAC MSB
+;	bit 6 - output	"
+;	bit 5 - output	"
+;	bit 4 - output	"
+;	bit 3 - output	"
+;	bit 2 - output 6-bit DAC LSB
+;	bit 1 - output RS-232C data output
+;	bit 0 - input cassette data
 ; Control A:
 ;	bit 7 - CD interrupt flag (FIRQ)
 ;	bit 6 - N/U
 ;	bit 5 - always 1
 ;	bit 4 - always 1
 ;	bit 3 - cassette motor control 0 - off 1 - on
-;	bit 2 - 0 port A direction , 1 - normal operation
+;	bit 2 - 0 - port A direction,    1 - normal operation
 ;	bit 1 - 0 - IRQ on falling edge, 1 - rising edge
-;	bit 0 - 0 - CD disabled , 1 - enabled
-; Port B:	Mixed I/O
-;	bit 7 - VDG control output A*/G
-;	bit 6 - VDG control output GM2
-;	bit 5 - VDG control output GM1
-;	bit 4 - VDG control output GM0 & *INT/EXT
-;	bit 3 - VDG control output CSS
-;	bit 2 - RAM size input
-;	bit 1 - single bit sound output
-;	bit 0 - RS-232 data input
+;	bit 0 - 0 - CD disabled,         1 - enabled
+; Port B:
+;	bit 7 - output VDG control output A*/G
+;	bit 6 - output VDG control output GM2
+;	bit 5 - output VDG control output GM1
+;	bit 4 - output VDG control output GM0 & *INT/EXT
+;	bit 3 - output VDG control output CSS
+;	bit 2 - input RAM size
+;	bit 1 - input single bit sound
+;	bit 0 - input RS-232 data
 ; Control B:
 ;	bit 7 - cartridge IRQ flag (FIRQ)
 ;	bit 6 - N/U
 ;	bit 5 - always 1
 ;	bit 4 - always 1
 ;	bit 3 - 6-bit sound enable
-;	bit 2 - 0 - port B direction , 1 - normal operation
-;	bit 1 - 0 - IRQ on falling edge, 1 - rising edge
-;	bit 0 - 0 - cartridge IRQ disabled , 1 - enabled
+;	bit 2 - 0 - port B direction,       1 - normal operation
+;	bit 1 - 0 - IRQ on falling edge,    1 - rising edge
+;	bit 0 - 0 - cartridge IRQ disabled, 1 - enabled
 ;************************************************************************
 
 PIA1A		equ	$FF20
