@@ -50,16 +50,10 @@
 ;
 ;	They are also used to select the joysticks if sound
 ;	is disabled (PIA1B)
-;			 0	0	left, up/down
-;			 0	1	left, left/right
-;			 1	0	right, up/down
-;			 1	1	right, left/right
-;
-;	double check it isn't
-;			0	0	right left/right
-;			0	1	right up/down
-;			1	0	left  right/left
-;			1	1	left  up/down
+;			 0	0	right, left/right
+;			 0	1	right, up/down
+;			 1	0	left,  left/right
+;			 1	1	left,  up/down
 ;
 ;************************************************************************
 
