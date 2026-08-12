@@ -50,10 +50,10 @@
 ;	D - munged
 ;	X - munged
 ;	U - munged
-;	POTVAL0	- right vertical
-;	POTVAL1 - right horizontal
-;	POTVAL2	- left vertical
-;	POTVAL3 - left horizontal
+;	POTVAL0	- right horizontal
+;	POTVAL1 - right vertical
+;	POTVAL2	- left  horizontal
+;	POTVAL3 - left  vertical
 ; ---------------------------------------------------------------
 ;	WRTLDR	Turn cassette on and write leader
 ;Entry:	none
