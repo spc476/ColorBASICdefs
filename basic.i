@@ -11,8 +11,11 @@
 ; ---------------------------------------------------------------
 ;	CHROUT	Output a character to device (CB)
 ;Entry:	A - character to output
-;	DEVNUM -  0 for screen
-;	       - -2 for printer
+;	DEVNUM - -3 for serial port   (ECB?)
+;		 -2 for printer       (CB)
+;		 -1 for cassette      (CB)
+;		  0 for screen        (CB)
+;		  1-15 for disk files (DECB)
 ;Exit:	none
 ; ---------------------------------------------------------------
 ;	CSRDON	Starts cassette (CB)
@@ -192,7 +195,7 @@ FP0EXP		equ	$4F	; floating point accumulator
 FP0		equ	$50	; FP0
 STRDES		equ	$56	; temporary string descriptor
 
-DEVNUM		equ	$6F	; device number (-2 printer, 0 screen)
+DEVNUM		equ	$6F	; see CHROUT
 BLKTYP		equ	$7C	; cassette block type (BLKIN, BLKOUT)
 BLKLEN		equ	$7D	; cassette block length (BLKIN, BLKOUT)
 CBUFAD		equ	$7E	; cassette buffer (BLKIN, BLKOUT)
