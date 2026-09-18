@@ -13,7 +13,8 @@ CB.bawmst	equ	$A0E8	; all
 CB.consin	equ	$A171	; A
 CB.devin	equ	$A176	; A
 CB.cursorpos	equ	$A199	; A,B,X uses CB.curpos
-CB.polcat	equ	$A1B1	; A
+CB.blinkcur	equ	$A1B1
+CB.polcat	equ	$A1C1	; A
 CB.KEYIN	equ	$A1CB	; A
 CB.PUTCHR	equ	$A282
 CB.serialout	equ	$A2BF
