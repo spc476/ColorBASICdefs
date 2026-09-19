@@ -159,14 +159,16 @@ DECB.dflbuf	equ	$0989	; 256 byte buffer
 	;----------------------------------------------------
 	; Random file reserved area		DECB.rndfad
 	; file control blocks and buffers	DECB.fcbadr
-	; graphic page(s) reserved area		ECB.beggrp
-	; BASIC program				CB.txttab
-	; variable storage area			CB.vartab
-	; array storage area			CB.arytab
-	; free memory				CB.aryend
-	; stack					CB.botstk
-	; string space				CB.fretop to CB.strtab
-	; user program reserved area		CB.memsiz
+	; graphic page(s) reserved area		ECB.beggrp to CB.txttab
+	; BASIC program				CB.txttab  to CB.vartab
+	; variable storage area			CB.vartab  to CB.arytab
+	; array storage area			CB.arytab  to CB.aryend
+	; free memory				CB.aryend  to CB.botstk
+	; stack					CB.botstk  to CB.fretop
+	; string space				CB.fretop  to CB.strtab
+	; user program reserved area		CB.memsiz  to $7FFF
+	;
+	; Note: CB.memsiz appears to be the same as CB.strtab
 	;----------------------------------------------------
 
 	;************************************
