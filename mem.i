@@ -156,6 +156,19 @@ DECB.dverfl	equ	$0987	; verify flag, 0=off, $FF=on
 DECB.attctr	equ	$0988	; RW attempt counter
 DECB.dflbuf	equ	$0989	; 256 byte buffer
 
+	;----------------------------------------------------
+	; Random file reserved area		DECB.rndfad
+	; file control blocks and buffers	DECB.fcbadr
+	; graphic page(s) reserved area		ECB.beggrp
+	; BASIC program				CB.txttab
+	; variable storage area			CB.vartab
+	; array storage area			CB.arytab
+	; free memory				CB.aryend
+	; stack					CB.botstk
+	; string space				CB.fretop to CB.strtab
+	; user program reserved area		CB.memsiz
+	;----------------------------------------------------
+
 	;************************************
 	; Super Extended BASIC variables
 	;************************************
