@@ -34,9 +34,11 @@ CB.dnerr	equ	$A61F	;	; DN error
 CB.stblkin	equ	$A701	; A,B,X
 CB.GETBLK	equ	$A70B	; A,B,X
 CB.CASON	equ	$A77C	; A,B,X
+CB.motoron	equ	$A7CA	; A
 CB.maxdelay	equ	$A7D1	; X
 CB.delay	equ	$A7D3	; X
 CB.WRLDR	equ	$A7D8	; A,B,X,Y
+CB.motoroff	equ	$A7E9	; A
 CB.SNDBLK	equ	$A7F4	; A,B,X,Y
 CB.wrbyte	equ	$A82A	; A,B,X,Y
 CB.clearscreen	equ	$A928	; B,X
