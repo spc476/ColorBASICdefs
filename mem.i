@@ -1,17 +1,9 @@
 ; LGPL3+ Copyright 2025 by Sean Conner.
 ; Memory map (addresses $0100 on up) of CB/ECB/DECB.
 
-_CIT.cnum	equ	0	; # commands
-_CIT.cword	equ	1	; command word array
-_CIT.cjmp	equ	3	; command jump table
-_CIT.fnum	equ	5	; # functions
-_CIT.fword	equ	6	; function word array
-_CIT.fjmp	equ	8	; function jump table
-_CIT._size	equ	10
-	; or maybe
-_CIT.items	equ	0
-_CIT.text	equ	1
-_CIT.handler	equ	3
+_CIT.items	equ	0	; # keywords
+_CIT.text	equ	1	; ASCII text
+_CIT.handler	equ	3	; handlers
 _CIT._rsize	equ	5
 
 	;***********************************************
@@ -31,14 +23,12 @@ CB.debval	equ	$011B	; keyboard debounce delay ($045E)
 CB.expjmp	equ	$011D	; jump address for expoentiation
 CB.comvec	equ	$0120	; CB command interpretation vector table
 CB.fnvec	equ	$0125	; CB function interpretation vector table
-ECB.comvec	equ	$012A	; ECB command interpretation vector table
-ECB.fnvec	equ	$012F	; ECB function interpretation vector table
-DECB.comvec	equ	$0134	; DECB command interpretation vector table
-DECB.fnvec	equ	$0139	; DECB function interpretation vector table
-USR.comvec	equ	$013E	; USR command interpretation vector table
-USR.fnvec	equ	$0143	; USR function interpretation vector table
-U.comvec	equ	$0148	; not used (_CIT.items = 0)
-U.fnvec		equ	$014D	; not used (_CIT.items = 0)
+
+	;--------------------------------------------------------------
+	; The intervening 40 bytes are reserved for the ECB, DECB and USR
+	; command/function interpretation vector tables.
+	;--------------------------------------------------------------
+
 CB.keybuf	equ	$0152	; keyboard memory buffer
 CB.POTVAL0	equ	$015A	; right horizontal joystick
 CB.POTVAL1	equ	$015B	; right vertical joystick
@@ -89,6 +79,14 @@ CB.vidram	equ	$0400	; video display area
 
 ECB.timval	equ	$0112	; timver value for ECB
 ECB.U0114	equ	$0114
+ECB.comvec	equ	$012A	; ECB command interpretation vector table
+ECB.fnvec	equ	$012F	; ECB function interpretation vector table
+
+	;-------------------------------------------------------------------
+	; DECB moves this tablet elsewhere in memory because this memory
+	; then becomes the USR command/function interpretation vector table.
+	;-------------------------------------------------------------------
+
 ECB.usr0	equ	$013E	; USR0 address
 ECB.usr1	equ	$0140	; USR1 "
 ECB.usr2	equ	$0142	; USR2 "
@@ -103,6 +101,9 @@ ECB.usr9	equ	$0150	; USR9 "
 	;***********************************************
 	; DISK [EXTENDED] COLOR BASIC
 	;***********************************************
+
+DECB.comvec	equ	$0134	; DECB command interpretation vector table
+DECB.fnvec	equ	$0139	; DECB function interpretation vector table
 
 DECB.dbuf0	equ	$0600	; I/O buffer #0
 DECB.dbuf1	equ	$0700	; I/O buffer #1
@@ -155,6 +156,13 @@ DECB.drgram	equ	$0986	; RAM image of DSKCTRL ($FF40)
 DECB.dverfl	equ	$0987	; verify flag, 0=off, $FF=on
 DECB.attctr	equ	$0988	; RW attempt counter
 DECB.dflbuf	equ	$0989	; 256 byte buffer
+
+	;------------------------------------------
+
+USR.comvec	equ	$013E	; USR command interpretation vector table
+USR.fnvec	equ	$0143	; USR function interpretation vector table
+U.comvec	equ	$0148	; not used (_CIT.items = 0)
+U.fnvec		equ	$014D	; not used (_CIT.items = 0)
 
 	;----------------------------------------------------
 	; Random file reserved area		DECB.rndfad
